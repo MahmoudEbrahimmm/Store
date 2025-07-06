@@ -1,6 +1,9 @@
 @extends('layouts.dashboard')
-@section('title-url','Dashboard - لوحة التحكم ')
 @section('title-page','Dashboard')
+@section('breadcrumb')
+    @parent
+    <li class="breadcrumb-item active">Startr Pager</li>
+@endsection
 @section('content')
     <div class="row">
                         <div class="col-xl-3 col-md-6">
