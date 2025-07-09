@@ -26,7 +26,7 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Link</a>
+          <a class="nav-link active" href="#">Contact</a>
         </li>
         </ul>
         <!-- Navbar Search-->
@@ -38,7 +38,7 @@
                         class="fas fa-search"></i></button>
             </div>
         </form>
-
+        
         <!-- Navbar right-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
@@ -50,7 +50,10 @@
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                    <button type="submit" class="btn btn-light dropdown-item">Logout</button>
+                    </form>
                 </ul>
             </li>
         </ul>
@@ -60,7 +63,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Mahmoud ibrahim</div>
+                        <div class="sb-sidenav-menu-heading">{{ Auth::user()->name ?? '' }}</div>
                         <!-- Start partials code nav -- sidebarMenu -->
                         @include('layouts.partials.nav')
                     </div>

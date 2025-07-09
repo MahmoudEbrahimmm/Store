@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title-page','Dashboard')
+@section('title-page','Home')
 @section('breadcrumb')
     @parent
     <li class="breadcrumb-item active">Startr Pager</li>
