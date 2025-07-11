@@ -6,7 +6,7 @@
     <li class="breadcrumb-item active">Create Category</li>
 @endsection
 @section('content')
-    <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('dashboard.categories.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label class="mb-2">Category Name</label>

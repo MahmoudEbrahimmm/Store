@@ -7,11 +7,16 @@
 @endsection
 @section('content')
     <div class="mb-5">
-        <a href="{{ route('categories.create') }}" class="btn btn-sm btn-outline-primary">Create Category</a>
+        <a href="{{ route('dashboard.categories.create') }}" class="btn btn-sm btn-outline-primary">Create Category</a>
     </div>
     @if (session()->has('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success bg-success text-white">
         {{session('success')}}
+        </div>
+    @endif
+    @if (session()->has('error'))
+    <div class="alert alert-danger">
+        {{session('error')}}
         </div>
     @endif
     <table class="table text-center">
@@ -33,15 +38,14 @@
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->parent_id }}</td>
                 <td>{{ $category->created_at }}</td>
-                <td>
-                    <a href="{{ route('categories.edit',$category->id) }}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
-                
-                
-                    {{-- <form action="{{ route('categories.destory',$category->id) }}" method="post">
+                <td class="d-inline-flex gap-3">
+                    <a href="{{ route('dashboard.categories.edit',$category->id) }}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                    
+                    <form action="{{ route('dashboard.categories.destroy',$category->id) }}" method="post">
                         @csrf
-                        @method('delete') --}}
+                        @method('delete')
                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
-                    {{-- </form> --}}
+                    </form>
                 </td>
             </tr>
             @empty

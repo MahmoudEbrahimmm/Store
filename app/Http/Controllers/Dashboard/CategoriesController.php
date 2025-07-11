@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Exception;
 
 class CategoriesController extends Controller
 {
@@ -15,7 +16,7 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('dashboard.categories.index',compact('categories'));
+        return view('dashboard.categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +25,7 @@ class CategoriesController extends Controller
     public function create()
     {
         $parents = Category::all();
-        return view('dashboard.categories.create',compact('parents'));
+        return view('dashboard.categories.create', compact('parents'));
     }
 
     /**
@@ -34,13 +35,13 @@ class CategoriesController extends Controller
     {
         // Request merge
         $request->merge([
-            'slug'=>Str::slug($request->post('name'))
+            'slug' => Str::slug($request->post('name'))
         ]);
 
-         $category = Category::create($request->all());
-         //PRG
-         return redirect()->route('categories')
-         ->with('success','Category created! successfully');
+        $category = Category::create($request->all());
+        //PRG
+        return redirect()->route('dashboard.categories.index')
+            ->with('success', 'Category created! successfully');
     }
 
     /**
@@ -56,15 +57,34 @@ class CategoriesController extends Controller
      */
     public function edit(string $id)
     {
-        return view('dashboard.categories.edit');
+
+        try {
+            $category = Category::findOrFail($id);
+        } catch (Exception $e) {
+            return redirect()->route('dashboard.categories.index')
+            ->with('error', 'Category not found!');
+        }
+
+        $parents = Category::where('id', '<>', $id)
+        ->where(function($query) use ($id){
+            $query->whereNull('parent_id')
+            ->orwhere('parent_id','<>',$id);
+        })
+        ->get();
+        
+        return view('dashboard.categories.edit', compact('category', 'parents'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->update($request->all());
+
+        return redirect()->route('dashboard.categories.index')
+            ->with('success', 'Category updated successfully');
     }
 
     /**
@@ -72,6 +92,8 @@ class CategoriesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Category::destroy($id);
+        return redirect()->route('dashboard.categories.index')
+            ->with('success', 'Category Deleted! successfully');
     }
 }
