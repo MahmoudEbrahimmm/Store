@@ -30,6 +30,9 @@
         <div class="form-group">
             <label class="mb-2">Category Image</label>
             <input type="file" name="image" class="form-control mb-3">
+            @if ($category->image)
+                <img src="{{ asset('storage/' . $category->image) }}" alt="" height="60">
+            @endif
         </div>
         {{-- Start Category Status --}}
         <div class="form-group">

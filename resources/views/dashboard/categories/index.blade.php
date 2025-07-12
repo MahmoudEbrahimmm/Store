@@ -10,20 +10,20 @@
         <a href="{{ route('dashboard.categories.create') }}" class="btn btn-sm btn-outline-primary">Create Category</a>
     </div>
     @if (session()->has('success'))
-    <div class="alert alert-success bg-success text-white">
+    <div class="alert bg-success text-white">
         {{session('success')}}
         </div>
     @endif
     @if (session()->has('error'))
-    <div class="alert alert-danger">
+    <div class="alert bg-danger text-white">
         {{session('error')}}
         </div>
     @endif
     <table class="table text-center">
         <thead>
             <tr>
-                <th></th>
-                <th>#</th>
+                <th>IMG</th>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Parent</th>
                 <th>Created At</th>
@@ -33,7 +33,7 @@
         <tbody>
             @forelse($categories as $category)
             <tr>
-                <td></td>
+                <td><img src="{{ asset('storage/' . $category->image) }}" alt="" height="60"></td>
                 <td>{{ $category->id }}</td>
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->parent_id }}</td>
