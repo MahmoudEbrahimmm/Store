@@ -10,24 +10,44 @@
         @csrf
         <div class="form-group">
             <label class="mb-2">Category Name</label>
-            <input type="text" name="name" class="form-control mb-3">
+            <input type="text" name="name" class="form-control mb-3 @error('name') is-invalid @enderror" value="{{old('name')}}">
+            @error('name')
+                <div class="text-danger">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
         <div class="form-group">
             <label class="mb-2">Category Parent</label>
-            <select name="parent_id" class="form-select mb-3">
+            <select name="parent_id" class="form-select mb-3 @error('parent_id') is-invalid @enderror">
                 <option value="">Primary Category</option>
                 @foreach ($parents as $parent)
                     <option value="{{ $parent->id }}">{{ $parent->name }}</option>
                 @endforeach
+                @error('parent_id')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </select>
         </div>
         <div class="form-group">
             <label class="mb-2">Category Description</label>
-            <textarea type="text" name="description" class="form-control mb-3"></textarea>
+            <textarea type="text" name="description" class="form-control mb-3 @error('description') is-invalid @enderror">{{old('description')}}</textarea>
+            @error('description')
+                <div class="text-danger">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
         <div class="form-group">
             <label class="mb-2">Category Image</label>
-            <input type="file" name="image" class="form-control mb-3">
+            <input type="file" name="image" class="form-control mb-3 @error('image') is-invalid @enderror">
+            @error('image')
+                <div class="text-danger">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
         {{-- Start Category Status --}}
         <div class="form-group">
@@ -44,6 +64,11 @@
                     Archived
                 </label>
             </div>
+            @error('status')
+                <div class="text-danger">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
         {{-- End Category Status --}}
         <div class="form-group">

@@ -34,7 +34,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-
+        $request->validate(Category::rules());
         // Request merge
         $request->merge([
             'slug' => Str::slug($request->post('name'))
@@ -90,6 +90,8 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate(Category::rules());
+
         $category = Category::findOrFail($id);
 
         $old_image = $category->image;

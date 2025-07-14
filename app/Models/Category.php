@@ -11,4 +11,14 @@ class Category extends Model
     protected $fillable = [
         'name','parent_id','description','image','status','slug'
     ];
+    
+    public static function rules(){
+        return [
+            'name'=>['required','string','min:3','max:15'],
+            'parent_id'=>['nullable','int','exists:categories,id'],
+            'image'=>['image','max:1048576','mimes:png,jpg'],
+            'status'=>['in:active,archived'],
+            'password'=>'min:6',
+        ];
+    }
 }

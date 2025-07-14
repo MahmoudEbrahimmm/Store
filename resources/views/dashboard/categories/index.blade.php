@@ -38,7 +38,7 @@
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->parent_id }}</td>
                 <td>{{ $category->created_at }}</td>
-                <td class="d-inline-flex gap-3">
+                <td class="d-inline-flex gap-3 text-center">
                     <a href="{{ route('dashboard.categories.edit',$category->id) }}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
                     
                     <form action="{{ route('dashboard.categories.destroy',$category->id) }}" method="post">
