@@ -19,6 +19,15 @@
         {{session('error')}}
         </div>
     @endif
+    <form action="{{ URL::current() }}" method="get" class="d-flex justify-content-between mb-3">
+        <input type="text" name="name" placeholder="Name" class="form-control mx-2" :value="request('name')">
+        <select name="status" class="form-control mx-2">
+            <option value="">All</option>
+            <option value="active" @selected(request('status' == 'active'))>Active</option>
+            <option value="archived" @selected(request('status' == 'archived'))>Archived</option>
+        </select>
+        <button class="btn btn-dark mx-2">Filter</button>
+    </form>
     <table class="table text-center">
         <thead>
             <tr>
@@ -26,6 +35,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Parent</th>
+                <th>Status</th>
                 <th>Created At</th>
                 <th colspan="2">Operation</th>
             </tr>
@@ -37,6 +47,7 @@
                 <td>{{ $category->id }}</td>
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->parent_id }}</td>
+                <td>{{ $category->status }}</td>
                 <td>{{ $category->created_at }}</td>
                 <td class="d-inline-flex gap-3 text-center">
                     <a href="{{ route('dashboard.categories.edit',$category->id) }}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
@@ -55,4 +66,5 @@
             @endforelse
         </tbody>
     </table>
+    {{$categories->withQueryString()->links()}}
 @endsection

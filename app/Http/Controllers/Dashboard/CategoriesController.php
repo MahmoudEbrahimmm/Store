@@ -16,7 +16,21 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $request = request();
+        $query = Category::query();
+
+        if ($request->has('name')) {
+            $name = $request->query('name');
+            $query->where('name', 'LIKE', '%' . $name . '%');
+        }
+
+        if ($request->has('status')) {
+            $status = $request->query('status');
+            $query->where('status', '=', $status); // أو 'LIKE' لو بحث جزئي
+        }
+
+        $categories = $query->paginate(1);
+
         return view('dashboard.categories.index', compact('categories'));
     }
 
@@ -34,7 +48,10 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(Category::rules());
+        $request->validate(Category::rules(), [
+            // 'required'=>'مطلوب ادخال حقل (:attribute) اولا', //attribute => show name field
+            // 'unique'=>'الخقل موجود مسبقا!'
+        ]);
         // Request merge
         $request->merge([
             'slug' => Str::slug($request->post('name'))
@@ -42,12 +59,12 @@ class CategoriesController extends Controller
 
         $data = $request->except('image');
 
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $path = $file->store('uploads','public');
+            $path = $file->store('uploads', 'public');
             $data['image'] = $path;
         }
-        
+
         $category = Category::create($data);
         //PRG
         return redirect()->route('dashboard.categories.index')
@@ -72,16 +89,16 @@ class CategoriesController extends Controller
             $category = Category::findOrFail($id);
         } catch (Exception $e) {
             return redirect()->route('dashboard.categories.index')
-            ->with('error', 'Category not found!');
+                ->with('error', 'Category not found!');
         }
 
         $parents = Category::where('id', '<>', $id)
-        ->where(function($query) use ($id){
-            $query->whereNull('parent_id')
-            ->orwhere('parent_id','<>',$id);
-        })
-        ->get();
-        
+            ->where(function ($query) use ($id) {
+                $query->whereNull('parent_id')
+                    ->orwhere('parent_id', '<>', $id);
+            })
+            ->get();
+
         return view('dashboard.categories.edit', compact('category', 'parents'));
     }
 
@@ -98,14 +115,14 @@ class CategoriesController extends Controller
 
         $data = $request->except('image');
 
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $path = $file->store('uploads','public');
+            $path = $file->store('uploads', 'public');
             $data['image'] = $path;
         }
 
         $category->update($data);
-        if($old_image && isset($data['image'])){
+        if ($old_image && isset($data['image'])) {
             Storage::disk('public')->delete($old_image);
         }
 
@@ -120,7 +137,7 @@ class CategoriesController extends Controller
     {
         $category = Category::findOrFail($id);
         $category->delete();
-        if($category->image){
+        if ($category->image) {
             Storage::disk('public')->delete($category->image);
         }
 
