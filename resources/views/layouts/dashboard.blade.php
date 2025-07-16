@@ -28,7 +28,7 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Contact</a>
+          <a class="nav-link active" href="{{ route('dashboard.categories.index') }}">Categories</a>
         </li>
         </ul>
         <!-- Navbar Search-->

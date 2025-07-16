@@ -1,14 +1,13 @@
 @extends('layouts.dashboard')
-@section('title-url','Categories')
+@section('title-url','Trashed-Categories')
 @section('title-page','Categories')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Categories</li>
+    <li class="breadcrumb-item active">Trash</li>
 @endsection
 @section('content')
     <div class="mb-5">
-        <a href="{{ route('dashboard.categories.create') }}" class="btn btn-sm btn-outline-primary mr-2">Create</a>
-        <a href="{{ route('dashboard.categories.trash') }}" class="btn btn-sm btn-outline-dark">Trash</a>
+        <a href="{{ route('dashboard.categories.index') }}" class="btn btn-sm btn-outline-primary">Back</a>
     </div>
     @if (session()->has('success'))
     <div class="alert bg-success text-white">
@@ -35,9 +34,8 @@
                 <th>IMG</th>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Parent</th>
                 <th>Status</th>
-                <th>Created At</th>
+                <th>Deleted At</th>
                 <th colspan="2">Operation</th>
             </tr>
         </thead>
@@ -47,22 +45,25 @@
                 <td><img src="{{ asset('storage/' . $category->image) }}" alt="" height="60"></td>
                 <td>{{ $category->id }}</td>
                 <td>{{ $category->name }}</td>
-                <td>{{ $category->parent_name }}</td>
                 <td>{{ $category->status }}</td>
-                <td>{{ $category->created_at }}</td>
+                <td>{{ $category->deleted_at }}</td>
                 <td class="d-inline-flex gap-3 text-center">
-                    <a href="{{ route('dashboard.categories.edit',$category->id) }}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
                     
-                    <form action="{{ route('dashboard.categories.destroy',$category->id) }}" method="post">
+                    <form action="{{ route('dashboard.categories.restore',$category->id) }}" method="post">
+                        @csrf
+                        @method('put')
+                        <button type="submit" class="btn btn-sm btn-outline-info">Restore</button>
+                    </form>
+                    <form action="{{ route('dashboard.categories.force-delete',$category->id) }}" method="post">
                         @csrf
                         @method('delete')
-                        <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                     </form>
                 </td>
             </tr>
             @empty
             <tr class="bg-warning">
-                <td colspan="7"><h5 class="text-center mt-5 mb-5"> No Categories defined. </h5></td>
+                <td colspan="6"><h5 class="text-center mt-5 mb-5"> No Categories defined. </h5></td>
             </tr>
             @endforelse
         </tbody>

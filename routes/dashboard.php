@@ -12,6 +12,9 @@ Route::group([
     'as'=>'dashboard.'
 
 ], function(){
+    Route::get('/categories/trash', [CategoriesController::class,'trash'])->name('categories.trash');
+    Route::put('/categories/{category}/restore', [CategoriesController::class,'restore'])->name('categories.restore');
+    Route::delete('/categories/{category}/force-delete', [CategoriesController::class,'force-delete'])->name('categories.force-delete');
     
     Route::resource('/dashboard/categories',CategoriesController::class);
 });
