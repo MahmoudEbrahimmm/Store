@@ -14,11 +14,17 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'name'=>'Mahmoud Ebrahim',
-            'email'=>'mahmoud@gmail.com',
-            'password'=>Hash::make('password'),
-            'phone_number'=>'0502211338',
-        ]);
+        // User::create([
+        //     'name'=>'Ali Samir',
+        //     'email'=>'ali@gmail.com',
+        //     'password'=>Hash::make('password'),
+        //     'phone_number'=>'050223344',
+        // ]);
+        // User::create([
+        //     'name'=>'Marwa ali',
+        //     'email'=>'marwa@gmail.com',
+        //     'password'=>Hash::make('password'),
+        //     'phone_number'=>'050224433',
+        // ]);
     }
 }

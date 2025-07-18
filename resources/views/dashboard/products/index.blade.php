@@ -1,14 +1,14 @@
 @extends('layouts.dashboard')
-@section('title-url','Categories')
-@section('title-page','Categories')
+@section('title-url','Products')
+@section('title-page','Products')
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active">Categories</li>
+    <li class="breadcrumb-item active">Products</li>
 @endsection
 @section('content')
     <div class="mb-5">
-        <a href="{{ route('dashboard.categories.create') }}" class="btn btn-sm btn-outline-primary mr-2">Create</a>
-        <a href="{{ route('dashboard.categories.trash') }}" class="btn btn-sm btn-outline-dark">Trash</a>
+        <a href="{{ route('dashboard.products.create') }}" class="btn btn-sm btn-outline-primary mr-2">Create</a>
+        {{-- <a href="{{ route('dashboard.products.trash') }}" class="btn btn-sm btn-outline-dark">Trash</a> --}}
     </div>
     @if (session()->has('success'))
     <div class="alert bg-success text-white">
@@ -32,36 +32,30 @@
     <table class="table text-center">
         <thead>
             <tr>
-                <th>IMAGE</th>
+                <th>IMG</th>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Parent</th>
-                <th>Product #</th>
+                <th>Category</th>
+                <th>Store</th>
                 <th>Status</th>
                 <th>Created At</th>
-                <th colspan="3">Operation</th>
+                <th colspan="2">Operation</th>
             </tr>
         </thead>
         <tbody>
-            @forelse($categories as $category)
+            @forelse($products as $product)
             <tr>
-                <td><img src="{{ asset('storage/' . $category->image) }}" alt="" height="60"></td>
-                <td>{{ $category->id }}</td>
-                <td>{{ $category->name }}</td>
-                <td>{{ $category->parent->name }}</td>
-                <td>{{ $category->products_count }}</td>
-                <td>{{ $category->status }}</td>
-                <td>{{ $category->created_at }}</td>
-
+                <td><img src="{{ asset('storage/' . $product->image) }}" alt="" height="60"></td>
+                <td>{{ $product->id }}</td>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->category->name }}</td>
+                <td>{{ $product->store->name }}</td>
+                <td>{{ $product->status }}</td>
+                <td>{{ $product->created_at }}</td>
                 <td class="d-inline-flex gap-3 text-center">
-                    <a href="{{ route('dashboard.categories.show',$category->id) }}" class="btn btn-sm btn-primary">
-                        <i class="fa-solid fa-eye"></i></a>
-
-                    <a href="{{ route('dashboard.categories.edit',$category->id) }}" class="btn btn-sm btn-success">
-                        <i class="fa-solid fa-pen-to-square"></i></a>
-
+                    <a href="{{ route('dashboard.products.edit',$product->id) }}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
                     
-                    <form action="{{ route('dashboard.categories.destroy',$category->id) }}" method="post">
+                    <form action="{{ route('dashboard.products.destroy',$product->id) }}" method="post">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
@@ -70,10 +64,10 @@
             </tr>
             @empty
             <tr class="bg-warning">
-                <td colspan="8"><h5 class="text-center mt-5 mb-5"> No Categories defined. </h5></td>
+                <td colspan="8"><h5 class="text-center mt-5 mb-5"> No products defined. </h5></td>
             </tr>
             @endforelse
         </tbody>
     </table>
-    {{$categories->withQueryString()->links()}}
+    {{$products->withQueryString()->links()}}
 @endsection

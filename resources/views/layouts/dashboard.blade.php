@@ -30,6 +30,9 @@
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('dashboard.categories.index') }}">Categories</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ route('dashboard.products.index') }}">Products</a>
+        </li>
         </ul>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
