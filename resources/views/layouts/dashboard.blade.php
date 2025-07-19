@@ -68,7 +68,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">{{ Auth::user()->name ?? '' }}</div>
+                        <a href="{{ route('dashboard.profile.edit') }}" class="sb-sidenav-menu-heading"> {{ Auth::user()->name ?? '' }}</a>
                         <!-- Start partials code nav -- sidebarMenu -->
                         @include('layouts.partials.nav')
                     </div>
