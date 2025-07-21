@@ -6,10 +6,19 @@
     <li class="breadcrumb-item active">Edit Profile</li>
 @endsection
 @section('content')
+    @if (session()->has('success'))
+        <div class="alert bg-success text-white">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if (session()->has('error'))
+        <div class="alert bg-danger text-white">
+            {{ session('error') }}
+        </div>
+    @endif
     <form action="{{ route('dashboard.profile.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('patch')
-
         <div class="form-group">
             <label class="mb-2">First Name</label>
             <input type="text" name="first_name" class="form-control mb-3 @error('first_name') is-invalid @enderror"
@@ -61,8 +70,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label class="mb-2">Street Address</label>
-            <input type="text" name="street_address"
+            <label class="mb-2">Street Addrees</label>
+            <input type="text" name="street_addrees"
                 class="form-control mb-3 @error('street_address') is-invalid @enderror"
                 value="{{ old('street_address') ?? $user->profile->street_address }}">
             @error('street_address')
@@ -91,20 +100,40 @@
                 </div>
             @enderror
         </div>
-        <select name="country" class="form-select mb-3 @error('country') is-invalid @enderror">
-            @foreach ($countries as $country)
-                <option value="{{ is_object($country) ? $country->id : $country }}" @selected(is_object($country) ? $user->profile->country == $country->id : $user->profile->country == $country)>
-                    {{ is_object($country) ? $country->name : $country }}
-                </option>
-            @endforeach
-        </select>
-        <select name="local" class="form-select mb-3 @error('local') is-invalid @enderror">
-            @foreach ($locales as $local)
-                <option value="{{ is_object($local) ? $local->id : $local }}" @selected(is_object($local) ? $user->profile->local == $local->id : $user->profile->local == $local)>
-                    {{ is_object($local) ? $local->name : $local }}
-                </option>
-            @endforeach
-        </select>
+        <div class="form-group">
+            <label class="mb-2">Country</label>
+            <select name="country" class="form-select mb-3 @error('country') is-invalid @enderror">
+                <option value="">Choose Country</option>
+                @foreach ($countries as $country)
+                    <option value="{{ $country }}" @selected($user->profile->country === $country)>
+                        {{ $country }}
+                    </option>
+                @endforeach
+            </select>
+            @error('country')
+                <div class="text-danger">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label class="mb-2">Language</label>
+            <select name="local" class="form-select mb-3 @error('local') is-invalid @enderror">
+                <option value="">Choose Language</option>
+                @foreach ($locales as $local)
+                    <option value="{{ $local }}" @selected($user->profile->local === $local)>
+                        {{ $local }}
+                    </option>
+                @endforeach
+            </select>
+            @error('local')
+                <div class="text-danger">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
         <div class="form-group">
             <button type="submit" class="btn btn-primary mt-3">Save</button>
         </div>
