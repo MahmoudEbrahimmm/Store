@@ -25,7 +25,7 @@
         <!-- Nav-bar left -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('dashboard.categories.index') }}">Categories</a>
@@ -68,7 +68,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <a href="{{ route('dashboard.profile.edit') }}" class="sb-sidenav-menu-heading nav-link mt-2"> {{ Auth::user()->name ?? '' }}</a>
+                        <a href="{{ route('dashboard.profile.edit') }}" class="sb-sidenav-menu-heading nav-link mt-3"> {{ Auth::user()->name ?? '' }}</a>
                         <!-- Start partials code nav -- sidebarMenu -->
                         @include('layouts.partials.nav')
                     </div>

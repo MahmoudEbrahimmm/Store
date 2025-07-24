@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
@@ -24,7 +24,7 @@ class Product extends Model
     public static function booted(){
         static::addGlobalScope('store',function(Builder $builder){
             $user = Auth::user();
-            if($user->store_id){
+            if($user && $user->store_id){
                 $builder->where('store_id','=',$user->store_id);
             }
         });
@@ -40,4 +40,31 @@ class Product extends Model
         );
 
     }
+
+    public function scopeActive(Builder $builder){
+        $builder->where('status','=','active');
+    }
+    
+    public function getImageUrlAttribute(){
+
+        return asset('assets/images/defalt product.jpeg');
+
+        // return 'https://altareeqkitchen.com/static/site/images/default-product.png';
+        // if(!$this->image){
+        //     return 'https://altareeqkitchen.com/static/site/images/default-product.png';
+        // }
+        // if(Str::startsWith($this->image,['http://','https://'])){
+        //     return $this->image;
+        // }
+    }
+    public function getSalePercenAttribute(){
+        if(!$this->compare_price){
+            return 0;
+        }
+
+        return number_format(100 - (100 * $this->price / $this->compare_price),1);
+    }
+    // public function getNewAttribute(){
+    //     return '';
+    // }
 }
