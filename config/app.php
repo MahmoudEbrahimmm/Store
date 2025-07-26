@@ -184,6 +184,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Currency'=> APP\Helpers\Currency::class,
     ])->toArray(),
 
 ];
