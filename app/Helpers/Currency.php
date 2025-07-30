@@ -8,7 +8,7 @@ class Currency
     public static function format($amount , $currency = null){
         $formatter = new NumberFormatter(config('app.locale'), NumberFormatter::CURRENCY);
         if($currency === null){
-            $currency = config('app.currency','USD');
+            $currency = config('app.Currency','USD');
         }
         return $formatter->formatCurrency($amount,$currency);
     }
