@@ -13,6 +13,7 @@ class CartObserver
     public function creating(Cart $cart): void
     {
         $cart->id = Str::uuid();  // انشا اللاي دي بشكل تلقائي
+        $cart->cookie_id = Cart::getCookieId();
     }
     
 

@@ -12,7 +12,9 @@ Route::get('/',[HomeConreoller::class,'index'])->name('home');
 Route::get('/products',[ProductsController::class,'index'])->name('products.index');
 Route::get('/products/{product:slug}',[ProductsController::class,'show'])->name('products.show');
 
-Route::resource('cart',CartController::class);
+Route::resource('cart', CartController::class);
+
+// Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/dashboard.php';

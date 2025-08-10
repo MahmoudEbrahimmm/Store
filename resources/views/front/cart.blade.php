@@ -1,5 +1,5 @@
 <x-front-layout title="Cart">
-        <!-- Start Breadcrumbs -->
+    <!-- Start Breadcrumbs -->
     <div class="breadcrumbs">
         <div class="container">
             <div class="row align-items-center">
@@ -10,8 +10,8 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
-                        <li><a href=" {{route('home')}} "><i class="lni lni-home"></i> Home</a></li>
-                        <li><a href=" {{route('products.index')}} ">Shop</a></li>
+                        <li><a href=" {{ route('home') }} "><i class="lni lni-home"></i> Home</a></li>
+                        <li><a href=" {{ route('products.index') }} ">Shop</a></li>
                         <li>Cart</li>
                     </ul>
                 </div>
@@ -51,36 +51,37 @@
 
                 <!-- Cart Single List list -->
                 @foreach ($cart->get() as $item)
-                <div class="cart-single-list">
-                    <div class="row align-items-center">
-                        <div class="col-lg-1 col-md-1 col-12">
-                            <a href="{{ route('products.show',$item->product->slug) }}">
-                                <img src="{{$item->product->image_url}}" alt="#"></a>
-                        </div>
-                        <div class="col-lg-4 col-md-3 col-12">
-                            <h5 class="product-name"><a href="{{ route('products.show',$item->product->slug) }}">
-                                    {{$item->product->name}} </a></h5>
-                            <p class="product-des">
-                                <span><em>Type:</em> Mirrorless</span>
-                                <span><em>Color:</em> Black</span>
-                            </p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <div class="count-input">
-                                <input class="form-control" value="{{ $item->quantity }}">
+                    <div class="cart-single-list" id="{{$item->id}}">
+                        <div class="row align-items-center">
+                            <div class="col-lg-1 col-md-1 col-12">
+                                <a href="{{ route('products.show', $item->product->slug) }}">
+                                    <img src="{{ $item->product->image_url }}" alt="#"></a>
+                            </div>
+                            <div class="col-lg-4 col-md-3 col-12">
+                                <h5 class="product-name"><a href="{{ route('products.show', $item->product->slug) }}">
+                                        {{ $item->product->name }} </a></h5>
+                                <p class="product-des">
+                                    <span><em>Type:</em> Mirrorless</span>
+                                    <span><em>Color:</em> Black</span>
+                                </p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <div class="count-input">
+                                    <input class="form-control item-quantity" data-id="{{ $item->id }}"
+                                        data-product-id="{{ $item->product_id }}" value="{{ $item->quantity }}">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p>{{ Currency::format($item->quantity * $item->product->price) }}</p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12">
+                                <p>{{ Currency::format(0) }}</p>
+                            </div>
+                            <div class="col-lg-1 col-md-2 col-12">
+                                <a href="javascript:void(0)" class="remove-item" data-id="{{ $item->id }}"><i class="lni lni-close"></i></a>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>{{ Currency::format($item->quantity * $item->product->price) }}</p>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-12">
-                            <p>{{ Currency::format(0) }}</p>
-                        </div>
-                        <div class="col-lg-1 col-md-2 col-12">
-                            <a class="remove-item" href="javascript:void(0)"><i class="lni lni-close"></i></a>
-                        </div>
                     </div>
-                </div>
                 @endforeach
                 <!-- End Single List list -->
 
@@ -124,4 +125,14 @@
         </div>
     </div>
     <!--/ End Shopping Cart -->
+
+    @push('scripts')
+        <script>
+            const csrf_token = "{{ csrf_token() }}";
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    @endpush
+    @vite(['resources/js/cart.js'])
+
 </x-front-layout>
