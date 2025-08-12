@@ -17,7 +17,7 @@ class CartModelRepository implements CartRepositry
     }
     public function get(): Collection
     {
-        if(!$this->items->count()){
+        if (!$this->items->count()) {
             $this->items = Cart::with('product')->get();
         }
         return $this->items;
@@ -36,7 +36,7 @@ class CartModelRepository implements CartRepositry
             $this->get()->push($cart);
             return $item;
         }
-        return $item->increment('quantity',$quantity);
+        return $item->increment('quantity', $quantity);
     }
     public function update($id, $quantity)
     {
@@ -55,9 +55,8 @@ class CartModelRepository implements CartRepositry
     }
     public function total(): float
     {
-        return $this->get()->sum(function($item){
-            return $item->quantity * $item->product->price;
+        return $this->get()->sum(function ($item) {
+            return $item->quantity * ($item->product->price ?? 0);
         });
     }
-
 }

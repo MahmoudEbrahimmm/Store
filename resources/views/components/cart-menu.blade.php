@@ -14,22 +14,37 @@
         <div class="shopping-item">
             <div class="dropdown-cart-header">
                 <span> {{ $items->count() }} Items</span>
-                <a href="{{route('cart.index')}}">View Cart</a>
+                <a href="{{ route('cart.index') }}">View Cart</a>
             </div>
             <ul class="shopping-list">
                 @foreach ($items as $item)
-                <li>
-                    <a href="javascript:void(0)" class="remove" title="Remove this item"><i
-                            class="lni lni-close"></i></a>
-                    <div class="cart-img-head">
-                        <a class="cart-img" href=" {{route('products.show' , $item->product->slug)}} "><img
-                                src="{{ $item->product->image_url }}" alt="#"></a>
-                    </div>
-                    <div class="content">
-                        <h4><a href=" {{route('products.show' , $item->product->slug)}}"> {{$item->product->name}}</a></h4>
-                        <p class="quantity">{{$item->quantity}}x - <span class="amount"> {{Currency::format($item->product->price)}} </span></p>
-                    </div>
-                </li>
+                    <li>
+                        <a href="javascript:void(0)" class="remove" title="Remove this item"><i
+                                class="lni lni-close"></i></a>
+                        <div class="cart-img-head">
+                            <a class="cart-img"
+                                href="{{ $item->product ? route('products.show', $item->product->slug) : '#' }}">
+                                <img src="{{ $item->product->image_url ?? asset('images/default.png') }}"
+                                    alt="#">
+                            </a>
+
+                        </div>
+                        <div class="content">
+                            <h4>
+                                <a href="{{ route('products.show', $item->product?->slug ?? '') }}">
+                                    {{ $item->product?->name ?? 'منتج غير متوفر' }}
+                                </a>
+                            </h4>
+
+                            <p class="quantity">
+    {{ $item->quantity }}x - 
+    <span class="amount">
+        {{ $item->product ? Currency::format($item->product->price) : 'غير متوفر' }}
+    </span>
+</p>
+
+                        </div>
+                    </li>
                 @endforeach
             </ul>
             <div class="bottom">
