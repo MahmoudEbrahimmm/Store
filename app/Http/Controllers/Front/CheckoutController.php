@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Events\OrderCreated;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderItem;
@@ -26,7 +27,17 @@ class CheckoutController extends Controller
     }
     public function store(Request $request, CartRepositry $cart)
     {
-        $request->validate([]);
+        $request->validate([
+            'addr.*.first_name'      => 'required|string|max:255',
+            'addr.*.last_name'       => 'required|string|max:255',
+            'addr.*.email'           => 'required|email|max:255',
+            'addr.*.phone_number'    => 'nullable|string|max:50',
+            'addr.*.street_address'  => 'required|string|max:255',
+            'addr.*.city'            => 'required|string|max:255',
+            'addr.*.postal_code'     => 'required|string|max:50',
+            'addr.*.state'           => 'required|string|max:255',
+            'addr.*.country'         => 'nullable|string|max:255',
+        ]);
         $items = $cart->get()->groupBy('product.store_id')->all();
 
         DB::beginTransaction();
@@ -53,12 +64,16 @@ class CheckoutController extends Controller
                 foreach ($request->post('addr') as $type => $address) {
                     $address['type'] = $type;
                     $address['phone_number'] = $address['phone_number'] ?? '';
-                    $address['country'] = $address['country'] ?? 'Egypt'; // أو أي قيمة افتراضية
+                    $address['country'] = $address['country'] ?? '';
                     $order->addresses()->create($address);
                 }
             }
-            $cart->empty();
+
             DB::commit();
+
+            // event('order.created', $order, Auth::user());
+            event(new OrderCreated($order));
+            
         } catch (Throwable $e) {
             DB::rollBack();
             throw $e;

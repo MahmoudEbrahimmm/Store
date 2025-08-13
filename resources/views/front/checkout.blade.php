@@ -28,7 +28,6 @@
                     {{-- // form checkout  --}}
                     <form :action="route('checkoout')" method="post">
                         @csrf
-
                         <div class="checkout-steps-form-style-1">
                             <ul id="accordionExample">
                                 <li>
@@ -102,7 +101,7 @@
                                                     <label>Region/State</label>
                                                     <div class="select-items">
                                                         <input name="addr[billing][state]" type="text"
-                                                            placeholder="State">
+                                                            placeholder="State" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -210,7 +209,7 @@
                                                     <label>Region/State</label>
                                                     <div class="select-items">
                                                         <input name="addr[shipping][state]" type="text"
-                                                            placeholder="State">
+                                                            placeholder="State" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
