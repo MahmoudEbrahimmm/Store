@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\HomeConreoller;
 use App\Http\Controllers\Front\ProductsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 
 
 Route::get('/',[HomeConreoller::class,'index'])->name('home');

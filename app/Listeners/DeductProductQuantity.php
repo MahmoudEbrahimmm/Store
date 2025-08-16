@@ -8,6 +8,7 @@ use App\Models\Product;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\DB;
+use Throwable;
 
 class DeductProductQuantity
 {
@@ -25,21 +26,13 @@ class DeductProductQuantity
     public function handle(OrderCreated $event): void
     {
         $order = $event->order;
-        // dd($order->products);
-        foreach ($order->products as $product) {
-            $product->decrement('quantity', $product->pivot->quantity);
+        try{
+            foreach ($order->products as $product) {
+                $product->decrement('quantity', $product->pivot->quantity);
+            }
+        }catch(Throwable $e){
+            
         }
-
-        //         foreach ($order->products as $product) {
-        //     $qtyToDeduct = $product->pivot->quantity;
-
-        //     if ($product->quantity >= $qtyToDeduct) {
-        //         $product->decrement('quantity', $qtyToDeduct);
-        //     } else {
-        //          هنا ممكن ترمي Exception أو تسجل خطأ أو تمنع الطلب
-        //         throw new \Exception("Not enough stock for product: {$product->name}");
-        //     }
-        // }
 
     }
 }

@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Notifications\Notifiable;
 
 class OrderItem extends Pivot
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
     protected $table = 'order_items';
     public $incrementing = true;
     public $timestamps = false;
