@@ -62,8 +62,16 @@
 
                             </div>
                             <div class="col-lg-4 col-md-3 col-12">
-                                <h5 class="product-name"><a href="{{ route('products.show', $item->product->slug) }}">
-                                        {{ $item->product->name }} </a></h5>
+                                @if ($item->product)
+                                    <h5 class="product-name">
+                                        <a href="{{ route('products.show', $item->product->slug) }}">
+                                            {{ $item->product->name }}
+                                        </a>
+                                    </h5>
+                                @else
+                                    <h5 class="product-name">Product not found</h5>
+                                @endif
+
                                 <p class="product-des">
                                     <span><em>Type:</em> Mirrorless</span>
                                     <span><em>Color:</em> Black</span>
@@ -76,7 +84,12 @@
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
-                                <p>{{ Currency::format($item->quantity * $item->product->price) }}</p>
+                                @if ($item->product)
+                                    <p>{{Currency::format($item->quantity * $item->product->price) }}</p>
+                                @else
+                                    <p>0</p>
+                                @endif
+
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
                                 <p>{{ Currency::format(0) }}</p>
