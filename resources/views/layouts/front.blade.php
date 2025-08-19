@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     <title>{{ $title }}</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.svg')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.svg') }}" />
 
     <!-- ========================= CSS here ========================= -->
     @stack('styles')
@@ -73,7 +73,7 @@
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="top-middle">
                             <ul class="useful-links">
-                                <li><a href="{{route('home')}}">Home</a></li>
+                                <li><a href="{{ route('home') }}">Home</a></li>
                                 <li><a href="about-us.html">About Us</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul>
@@ -81,18 +81,35 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="top-end">
-                            <div class="user">
-                                <i class="lni lni-user"></i>
-                                Hello
-                            </div>
-                            <ul class="user-login">
-                                <li>
-                                    <a href="login.html">Sign In</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                            </ul>
+                            @auth
+                                <div class="user">
+                                    <i class="lni lni-user"></i>
+                                    {{Auth::user()->name}}
+                                </div>
+                                <ul class="user-login">
+                                    <li>
+                                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit()">Sign Out</a>
+                                    </li>
+                                    <form action="{{route('logout')}}" id="logout" method="post" style="display:none;">@csrf</form>
+                                    <li>
+                                        <a href="{{route('register')}}">Register</a>
+                                    </li>
+                                </ul>
+                            @else
+                                <div class="user">
+                                    <i class="lni lni-user"></i>
+                                    Hello
+                                </div>
+                                <ul class="user-login">
+                                    <li>
+                                        <a href="{{route('login')}}">Sign In</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('register')}}">Register</a>
+                                    </li>
+                                </ul>
+                            @endauth
+
                         </div>
                     </div>
                 </div>
@@ -106,7 +123,7 @@
                     <div class="col-lg-3 col-md-3 col-7">
                         <!-- Start Header Logo -->
                         <a class="navbar-brand" href="index.html">
-                            <img src="{{asset('assets/images/logo/logo.svg')}}" alt="Logo">
+                            <img src="{{ asset('assets/images/logo/logo.svg') }}" alt="Logo">
                         </a>
                         <!-- End Header Logo -->
                     </div>
@@ -148,7 +165,7 @@
                             </div>
                             {{-- cart menu  --}}
                             <x-cart-menu />
-                            
+
                         </div>
                     </div>
                 </div>
@@ -321,7 +338,7 @@
                         <div class="col-lg-3 col-md-4 col-12">
                             <div class="footer-logo">
                                 <a href="index.html">
-                                    <img src="{{asset('assets/images/logo/white-logo.svg')}}" alt="#">
+                                    <img src="{{ asset('assets/images/logo/white-logo.svg') }}" alt="#">
                                 </a>
                             </div>
                         </div>
@@ -430,13 +447,14 @@
                         <div class="col-lg-4 col-12">
                             <div class="payment-gateway">
                                 <span>We Accept:</span>
-                                <img src="{{asset('assets/images/footer/credit-cards-footer.png')}}" alt="#">
+                                <img src="{{ asset('assets/images/footer/credit-cards-footer.png') }}"
+                                    alt="#">
                             </div>
                         </div>
                         <div class="col-lg-4 col-12">
                             <div class="copyright">
-                                <p>Designed and Developed by<a href="https://github.com/MahmoudEbrahimmm" rel="nofollow"
-                                        target="_blank">Mahmoud Ebrahim</a></p>
+                                <p>Designed and Developed by<a href="https://github.com/MahmoudEbrahimmm"
+                                        rel="nofollow" target="_blank">Mahmoud Ebrahim</a></p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-12">

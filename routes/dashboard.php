@@ -7,21 +7,21 @@ use App\Http\Middleware\CheckUserType;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard/index', [DashboardController::class,'index'])
-->middleware('auth','verified','auth.type:admin')
+->middleware('auth','verified','auth.type:super-admin,admin')
 ->name('dashboard');
 
 Route::group([
-    'middleware'=>['auth', 'verified','auth.type:admin'],
+    'middleware'=>['auth', 'verified','auth.type:super-admin,admin'],
     'as'=>'dashboard.'
 
 ], function(){
-    Route::get('/profile',[ProfileController::class,'edit'])->name('profile.edit');
-    Route::patch('/profile',[ProfileController::class,'update'])->name('profile.update');
+    Route::get('profile',[ProfileController::class,'edit'])->name('profile.edit');
+    Route::patch('profile',[ProfileController::class,'update'])->name('profile.update');
 
-    Route::get('/categories/trash', [CategoriesController::class,'trash'])->name('categories.trash');
-    Route::put('/categories/{category}/restore', [CategoriesController::class,'restore'])->name('categories.restore');
-    Route::delete('/categories/{category}/force-delete', [CategoriesController::class,'force-delete'])->name('categories.force-delete');
-    Route::resource('/dashboard/categories',CategoriesController::class);
+    Route::get('categories/trash', [CategoriesController::class,'trash'])->name('categories.trash');
+    Route::put('categories/{category}/restore', [CategoriesController::class,'restore'])->name('categories.restore');
+    Route::delete('categories/{category}/force-delete', [CategoriesController::class,'force-delete'])->name('categories.force-delete');
+    Route::resource('dashboard/categories',CategoriesController::class);
 
-    Route::resource('/dashboard/products',ProductsContrller::class);
+    Route::resource('dashboard/products',ProductsContrller::class);
 });
