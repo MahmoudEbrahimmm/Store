@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Response;
 
 class ProductsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function __construct(){
+        $this->middleware('auth:sanctum')->except('index','show');
+    }
+    // 1|jusznHkJA9CpNSECZU3gzqk6Gcu4LXcLphDN2wpy4f42735e <= pareer token
     public function index(Request $request)
     {
         // return Product::all();
