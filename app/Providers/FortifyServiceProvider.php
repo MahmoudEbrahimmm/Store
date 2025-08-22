@@ -26,30 +26,33 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         $request = request();
-        if($request->is('admin/*')){
-            Config::set('fortify.guard','admin');
-            Config::set('fortify.passwords','admins');
-            Config::set('fortify.prefix','admin');
+        if ($request->is('admin/*')) {
+            Config::set('fortify.guard', 'admin');
+            Config::set('fortify.passwords', 'admins');
+            Config::set('fortify.prefix', 'admin');
         }
 
-        // $this->app->instance(LoginRequest::class, new class implements LoginResponse{
+        // $this->app->instance(LoginResponse::class, new class implements LoginResponse {
         //     public function toResponse($request)
         //     {
-        //         if($request->user('admin')){
+        //         if ($request->user('admin')) {
         //             return redirect()->intended('dashboard'); 
         //         }
         //         return redirect()->intended('/');
         //     }
         // });
-        // $this->app->instance(LogoutResponse::class, new class implements LogoutResponse{
+
+        //     $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
         //     public function toResponse($request)
         //     {
-        //         if($request->user('admin')){
+        //         if ($request->user('admin')) {
         //             return redirect()->intended('/');
         //         }
+        //         return redirect()->intended('/'); 
         //     }
         // });
-        
+
+
     }
 
     /**
@@ -64,7 +67,7 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::redirectUserForTwoFactorAuthenticationUsing(RedirectIfTwoFactorAuthenticatable::class);
 
         RateLimiter::for('login', function (Request $request) {
-            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
+            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())) . '|' . $request->ip());
 
             return Limit::perMinute(5)->by($throttleKey);
         });
@@ -72,10 +75,10 @@ class FortifyServiceProvider extends ServiceProvider
         RateLimiter::for('two-factor', function (Request $request) {
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
-        
-        if(Config::get('fortify.guard') == 'admin'){
+
+        if (Config::get('fortify.guard') == 'admin') {
             Fortify::viewPrefix('auth.');
-        }else{
+        } else {
             Fortify::viewPrefix('front.auth.');
         }
 

@@ -89,7 +89,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="https://via.placeholder.com/180x180" alt="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKd5j6DTH8EhlrppvTAGKnjALnbGaTi9SaCg&s" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -106,7 +106,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="https://via.placeholder.com/180x180" alt="#">
+                            <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQAtNBL_1prMq4mmBAgIVphEu5CVd9804Idw&s" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -123,7 +123,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="https://via.placeholder.com/180x180" alt="#">
+                            <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT07zTL6oJqQCyI6yFPKpeqEOgBtQ_iyZB7FQ&s" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -140,7 +140,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="https://via.placeholder.com/180x180" alt="#">
+                            <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStDzna7iKc6G7wsUvCgT8wII1T04LB4WQblQ&s" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -157,7 +157,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="https://via.placeholder.com/180x180" alt="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU4PSuNEnDyxjKdNfowH7GfXPuA0ir3ta68w&s" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -174,7 +174,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="https://via.placeholder.com/180x180" alt="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCPTTJy8pTwBJOCSe5M1A0kAg_66zPgwQT6g&s" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -205,7 +205,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12">
-                    <div class="single-banner" style="background-image:url('https://via.placeholder.com/620x340')">
+                    <div class="single-banner" style="background-image:url('	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMCvMCSEWem_TLT8Y2xSm1kE08RWJ3L9qPXQ&s')">
                         <div class="content">
                             <h2>Smart Watch 2.0</h2>
                             <p>Space Gray Aluminum Case with <br>Black/Volt Real Sport Band </p>
@@ -218,7 +218,7 @@
 
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="single-banner custom-responsive-margin"
-                        style="background-image:url('https://via.placeholder.com/620x340')">
+                        style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJPHH8b1hgesGLf5opor0NetPKuOafGRFg7A&s')">
                         <div class="content">
                             <h2>Smart Headphone</h2>
                             <p>Lorem ipsum dolor sit amet, <br>eiusmod tempor
@@ -270,7 +270,7 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100"
+                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
                                     alt="#"></a>
                         </div>
                         <div class="list-info">
@@ -284,7 +284,7 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100"
+                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
                                     alt="#"></a>
                         </div>
                         <div class="list-info">
@@ -298,7 +298,7 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100"
+                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
                                     alt="#"></a>
                         </div>
                         <div class="list-info">
@@ -315,7 +315,7 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100"
+                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
                                     alt="#"></a>
                         </div>
                         <div class="list-info">
@@ -329,7 +329,7 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100"
+                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
                                     alt="#"></a>
                         </div>
                         <div class="list-info">
@@ -343,7 +343,7 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100"
+                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
                                     alt="#"></a>
                         </div>
                         <div class="list-info">
@@ -360,7 +360,7 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100"
+                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
                                     alt="#"></a>
                         </div>
                         <div class="list-info">
@@ -374,7 +374,7 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100"
+                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
                                     alt="#"></a>
                         </div>
                         <div class="list-info">
@@ -388,7 +388,7 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100"
+                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
                                     alt="#"></a>
                         </div>
                         <div class="list-info">
@@ -416,28 +416,28 @@
             <div class="brands-logo-wrapper">
                 <div class="brands-logo-carousel d-flex align-items-center justify-content-between">
                     <div class="brand-logo">
-                        <img src="https://via.placeholder.com/220x160" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://via.placeholder.com/220x160" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://via.placeholder.com/220x160" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://via.placeholder.com/220x160" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://via.placeholder.com/220x160" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://via.placeholder.com/220x160" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://via.placeholder.com/220x160" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://via.placeholder.com/220x160" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
                     </div>
                 </div>
             </div>
@@ -463,7 +463,7 @@
                     <div class="single-blog">
                         <div class="blog-img">
                             <a href="blog-single-sidebar.html">
-                                <img src="https://via.placeholder.com/370x215" alt="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGsMz9g3T9PfjNeDzAEoCqWCfjp53afA-f8Q&s" alt="#">
                             </a>
                         </div>
                         <div class="blog-content">
@@ -485,7 +485,7 @@
                     <div class="single-blog">
                         <div class="blog-img">
                             <a href="blog-single-sidebar.html">
-                                <img src="https://via.placeholder.com/370x215" alt="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGsMz9g3T9PfjNeDzAEoCqWCfjp53afA-f8Q&s" alt="#">
                             </a>
                         </div>
                         <div class="blog-content">
@@ -507,7 +507,7 @@
                     <div class="single-blog">
                         <div class="blog-img">
                             <a href="blog-single-sidebar.html">
-                                <img src="https://via.placeholder.com/370x215" alt="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGsMz9g3T9PfjNeDzAEoCqWCfjp53afA-f8Q&s" alt="#">
                             </a>
                         </div>
                         <div class="blog-content">
