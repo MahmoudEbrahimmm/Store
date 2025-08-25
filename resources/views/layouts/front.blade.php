@@ -41,44 +41,24 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="top-left">
-                            <ul class="menu-top-link">
-                                <li>
-                                    <div class="select-position">
-                                        <form action="{{route('currency.store')}}" method="post">
-                                            @csrf
-                                        <select name="currency_code" onchange="this.form.submit()">
-                                            <option value="USD" @selected('USD' == session('currency_code')) selected>$ USD</option>
-                                            <option value="EUR" @selected('EUR' == session('currency_code'))>€ EURO</option>
-                                            <option value="ILS" @selected('ILS' == session('currency_code'))>$ ILS</option>
-                                            <option value="JOD" @selected('JOD' == session('currency_code'))>₹ JOD</option>
-                                            <option value="SAR" @selected('SAR' == session('currency_code'))>¥ SAR</option>
-                                            <option value="QAR" @selected('QAR' == session('currency_code'))>৳ QAT</option>
-                                        </select>
-                                        </form>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="select-position">
-                                        <select id="select5">
-                                            <option value="0" selected>English</option>
-                                            <option value="1">Español</option>
-                                            <option value="2">Filipino</option>
-                                            <option value="3">Français</option>
-                                            <option value="4">العربية</option>
-                                            <option value="5">हिन्दी</option>
-                                            <option value="6">বাংলা</option>
-                                        </select>
-                                    </div>
-                                </li>
+                            <ul class="menu-top-link nav">
+                                @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                    <ul class="nav-item">
+                                        <a class="nav-link text-white d-inline-block px-2" rel="alternate" hreflang="{{ $localeCode }}"
+                                            href="{{LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                            {{ $properties['native'] }}
+                                        </a>
+                                    </ul>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-12">
                         <div class="top-middle">
                             <ul class="useful-links">
-                                <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="{{ route('home') }}">{{ __('app.home') }}</a></li>
+                                <li><a href="about-us.html">{{ __('app.about us') }}</a></li>
+                                <li><a href="contact.html">{{ __('app.contact us') }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -87,28 +67,31 @@
                             @auth
                                 <div class="user">
                                     <i class="lni lni-user"></i>
-                                    {{Auth::user()->name}}
+                                    {{ Auth::user()->name }}
                                 </div>
                                 <ul class="user-login">
                                     <li>
-                                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit()">Sign Out</a>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout').submit()"> {{__('app.Sign Out')}}</a>
                                     </li>
-                                    <form action="{{route('logout')}}" id="logout" method="post" style="display:none;">@csrf</form>
+                                    <form action="{{ route('logout') }}" id="logout" method="post"
+                                        style="display:none;">
+                                        @csrf</form>
                                     <li>
-                                        <a href="{{route('register')}}">Register</a>
+                                        <a href="{{ route('register') }}">{{__('app.register')}}</a>
                                     </li>
                                 </ul>
                             @else
                                 <div class="user">
                                     <i class="lni lni-user"></i>
-                                    Hello
+                                    {{__('app.home')}}
                                 </div>
                                 <ul class="user-login">
                                     <li>
-                                        <a href="{{route('login')}}">Sign In</a>
+                                        <a href="{{ route('login') }}">{{__('app.sign in')}}</a>
                                     </li>
                                     <li>
-                                        <a href="{{route('register')}}">Register</a>
+                                        <a href="{{ route('register') }}">{{__('app.register')}}</a>
                                     </li>
                                 </ul>
                             @endauth
@@ -138,7 +121,7 @@
                                 <div class="search-select">
                                     <div class="select-position">
                                         <select id="select1">
-                                            <option selected>All</option>
+                                            <option selected>{{__('app.all')}}</option>
                                             <option value="1">option 01</option>
                                             <option value="2">option 02</option>
                                             <option value="3">option 03</option>
@@ -162,7 +145,7 @@
                         <div class="middle-right-area">
                             <div class="nav-hotline">
                                 <i class="lni lni-phone"></i>
-                                <h3>Hotline:
+                                <h3>{{__('app.hotline')}}:
                                     <span>(+100) 123 456 7890</span>
                                 </h3>
                             </div>
@@ -182,7 +165,7 @@
                     <div class="nav-inner">
                         <!-- Start Mega Category Menu -->
                         <div class="mega-category-menu">
-                            <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
+                            <span class="cat-button"><i class="lni lni-menu"></i>{{__('app.all categories')}}</span>
                             <ul class="sub-category">
                                 <li><a href="product-grids.html">Electronics <i class="lni lni-chevron-right"></i></a>
                                     <ul class="inner-sub-category">
@@ -224,51 +207,42 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="index.html" aria-label="Toggle navigation">Home</a>
+                                        <a href="{{route('home')}}" aria-label="Toggle navigation">{{__('app.home')}}</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="dd-menu active collapsed" href="javascript:void(0)"
                                             data-bs-toggle="collapse" data-bs-target="#submenu-1-2"
                                             aria-controls="navbarSupportedContent" aria-expanded="false"
-                                            aria-label="Toggle navigation">Pages</a>
+                                            aria-label="Toggle navigation">{{__('app.pages')}}</a>
                                         <ul class="sub-menu collapse" id="submenu-1-2">
-                                            <li class="nav-item"><a href="about-us.html">About Us</a></li>
-                                            <li class="nav-item"><a href="faq.html">Faq</a></li>
-                                            <li class="nav-item active"><a href="login.html">Login</a></li>
-                                            <li class="nav-item"><a href="register.html">Register</a></li>
-                                            <li class="nav-item"><a href="mail-success.html">Mail Success</a></li>
-                                            <li class="nav-item"><a href="404.html">404 Error</a></li>
+                                            <li class="nav-item active"><a href="{{route('login')}}">Login</a></li>
+                                            <li class="nav-item"><a href="{{route('register')}}">Register</a></li>
                                         </ul>
                                     </li>
+                                    {{-- shop  --}}
                                     <li class="nav-item">
                                         <a class="dd-menu collapsed" href="javascript:void(0)"
                                             data-bs-toggle="collapse" data-bs-target="#submenu-1-3"
                                             aria-controls="navbarSupportedContent" aria-expanded="false"
                                             aria-label="Toggle navigation">Shop</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
-                                            <li class="nav-item"><a href="product-grids.html">Shop Grid</a></li>
-                                            <li class="nav-item"><a href="product-list.html">Shop List</a></li>
-                                            <li class="nav-item"><a href="product-details.html">shop Single</a></li>
-                                            <li class="nav-item"><a href="cart.html">Cart</a></li>
-                                            <li class="nav-item"><a href="checkout.html">Checkout</a></li>
+                                            <li class="nav-item"><a href="{{route('cart.index')}}">Cart</a></li>
+                                            
+                                            <li class="nav-item"><a href="{{route('checkout')}}">Checkout</a></li>
                                         </ul>
                                     </li>
+                                    {{-- //blog --}}
                                     <li class="nav-item">
                                         <a class="dd-menu collapsed" href="javascript:void(0)"
                                             data-bs-toggle="collapse" data-bs-target="#submenu-1-4"
                                             aria-controls="navbarSupportedContent" aria-expanded="false"
                                             aria-label="Toggle navigation">Blog</a>
                                         <ul class="sub-menu collapse" id="submenu-1-4">
-                                            <li class="nav-item"><a href="blog-grid-sidebar.html">Blog Grid
-                                                    Sidebar</a>
-                                            </li>
-                                            <li class="nav-item"><a href="blog-single.html">Blog Single</a></li>
-                                            <li class="nav-item"><a href="blog-single-sidebar.html">Blog Single
-                                                    Sibebar</a></li>
+                                            
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact.html" aria-label="Toggle navigation">Contact Us</a>
+                                        <a href="contact.html" aria-label="Toggle navigation">{{__('app.contact us')}}</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
@@ -279,7 +253,7 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <!-- Start Nav Social -->
                     <div class="nav-social">
-                        <h5 class="title">Follow Us:</h5>
+                        <h5 class="title">{{__('app.follow us')}}:</h5>
                         <ul>
                             <li>
                                 <a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>

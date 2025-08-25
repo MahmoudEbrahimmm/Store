@@ -33,7 +33,7 @@
                         <div class="col-lg-12 col-md-6 col-12 md-custom-padding">
                             <!-- Start Small Banner -->
                             <div class="hero-small-banner"
-                                style="background-image: url('https://plus.unsplash.com/premium_photo-1679913792906-13ccc5c84d44?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D');">
+                                style="background-image: url('https://cdn.salla.sa/form-builder/7VaYVOVDmdKyfi97PiPlcnZEiq6GOiRtoCinkG3N.png');">
                                 <div class="content">
                                     <h2>
                                         <span>New line required</span>
@@ -70,7 +70,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Featured Categories</h2>
+                        <h2>{{__('app.featured categories')}}</h2>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                             suffered alteration in some form.</p>
                     </div>
@@ -89,7 +89,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKd5j6DTH8EhlrppvTAGKnjALnbGaTi9SaCg&s" alt="#">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGsMz9g3T9PfjNeDzAEoCqWCfjp53afA-f8Q&s" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -106,7 +106,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQAtNBL_1prMq4mmBAgIVphEu5CVd9804Idw&s" alt="#">
+                            <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbOfL8gTX7k_sSWK6n1KInpmbB3edyPm9taw&s" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -123,7 +123,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT07zTL6oJqQCyI6yFPKpeqEOgBtQ_iyZB7FQ&s" alt="#">
+                            <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt8eyglVMbf29L-oyaNKsAYgTuSJFId0hmww&s" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -140,7 +140,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStDzna7iKc6G7wsUvCgT8wII1T04LB4WQblQ&s" alt="#">
+                            <img src="	https://soukzed.com/wp-content/uploads/2023/10/2023_10_14_10_45_IMG_6641-630x630.webp" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -157,7 +157,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU4PSuNEnDyxjKdNfowH7GfXPuA0ir3ta68w&s" alt="#">
+                            <img src="	https://m.media-amazon.com/images/I/618omOFl16L.jpg" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -174,7 +174,7 @@
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
                         <div class="images">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCPTTJy8pTwBJOCSe5M1A0kAg_66zPgwQT6g&s" alt="#">
+                            <img src="https://babablog.oss-accelerate.aliyuncs.com/2023/07/two-power-banks.jpeg?x-oss-process=style%2Ffull" alt="#">
                         </div>
                     </div>
                     <!-- End Single Category -->
@@ -190,7 +190,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Trending Product</h2>
+                        <h2>{{__('app.trending product')}}</h2>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                             suffered alteration in some form.</p>
                     </div>
@@ -205,7 +205,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12">
-                    <div class="single-banner" style="background-image:url('	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMCvMCSEWem_TLT8Y2xSm1kE08RWJ3L9qPXQ&s')">
+                    <div class="single-banner" style="background-image:url('	https://cdn.shopify.com/s/files/1/0656/4157/8745/files/ps5-minorsection3.webp?v=1721901051')">
                         <div class="content">
                             <h2>Smart Watch 2.0</h2>
                             <p>Space Gray Aluminum Case with <br>Black/Volt Real Sport Band </p>
@@ -218,7 +218,7 @@
 
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="single-banner custom-responsive-margin"
-                        style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJPHH8b1hgesGLf5opor0NetPKuOafGRFg7A&s')">
+                        style="background-image:url('https://tv-it.com/storage/shada/iphone/15-pro-pro-max-p5.webp')">
                         <div class="content">
                             <h2>Smart Headphone</h2>
                             <p>Lorem ipsum dolor sit amet, <br>eiusmod tempor
@@ -241,7 +241,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Special Offer</h2>
+                        <h2>{{__('app.special offer')}}</h2>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have
                             suffered alteration in some form.</p>
                     </div>
@@ -261,183 +261,41 @@
     </section>
     <!-- End Special Offer -->
 
-    <!-- Start Home Product List -->
-    <section class="home-product-list section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-12 custom-responsive-margin">
-                    <h4 class="list-title">Best Sellers</h4>
-                    <!-- Start Single List -->
-                    <div class="single-list">
-                        <div class="list-image">
-                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
-                                    alt="#"></a>
-                        </div>
-                        <div class="list-info">
-                            <h3>
-                                <a href="product-grids.html">GoPro Hero4 Silver</a>
-                            </h3>
-                            <span>$287.99</span>
-                        </div>
-                    </div>
-                    <!-- End Single List -->
-                    <!-- Start Single List -->
-                    <div class="single-list">
-                        <div class="list-image">
-                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
-                                    alt="#"></a>
-                        </div>
-                        <div class="list-info">
-                            <h3>
-                                <a href="product-grids.html">Puro Sound Labs BT2200</a>
-                            </h3>
-                            <span>$95.00</span>
-                        </div>
-                    </div>
-                    <!-- End Single List -->
-                    <!-- Start Single List -->
-                    <div class="single-list">
-                        <div class="list-image">
-                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
-                                    alt="#"></a>
-                        </div>
-                        <div class="list-info">
-                            <h3>
-                                <a href="product-grids.html">HP OfficeJet Pro 8710</a>
-                            </h3>
-                            <span>$120.00</span>
-                        </div>
-                    </div>
-                    <!-- End Single List -->
-                </div>
-                <div class="col-lg-4 col-md-4 col-12 custom-responsive-margin">
-                    <h4 class="list-title">New Arrivals</h4>
-                    <!-- Start Single List -->
-                    <div class="single-list">
-                        <div class="list-image">
-                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
-                                    alt="#"></a>
-                        </div>
-                        <div class="list-info">
-                            <h3>
-                                <a href="product-grids.html">iPhone X 256 GB Space Gray</a>
-                            </h3>
-                            <span>$1150.00</span>
-                        </div>
-                    </div>
-                    <!-- End Single List -->
-                    <!-- Start Single List -->
-                    <div class="single-list">
-                        <div class="list-image">
-                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
-                                    alt="#"></a>
-                        </div>
-                        <div class="list-info">
-                            <h3>
-                                <a href="product-grids.html">Canon EOS M50 Mirrorless Camera</a>
-                            </h3>
-                            <span>$950.00</span>
-                        </div>
-                    </div>
-                    <!-- End Single List -->
-                    <!-- Start Single List -->
-                    <div class="single-list">
-                        <div class="list-image">
-                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
-                                    alt="#"></a>
-                        </div>
-                        <div class="list-info">
-                            <h3>
-                                <a href="product-grids.html">Microsoft Xbox One S</a>
-                            </h3>
-                            <span>$298.00</span>
-                        </div>
-                    </div>
-                    <!-- End Single List -->
-                </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                    <h4 class="list-title">Top Rated</h4>
-                    <!-- Start Single List -->
-                    <div class="single-list">
-                        <div class="list-image">
-                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
-                                    alt="#"></a>
-                        </div>
-                        <div class="list-info">
-                            <h3>
-                                <a href="product-grids.html">Samsung Gear 360 VR Camera</a>
-                            </h3>
-                            <span>$68.00</span>
-                        </div>
-                    </div>
-                    <!-- End Single List -->
-                    <!-- Start Single List -->
-                    <div class="single-list">
-                        <div class="list-image">
-                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
-                                    alt="#"></a>
-                        </div>
-                        <div class="list-info">
-                            <h3>
-                                <a href="product-grids.html">Samsung Galaxy S9+ 64 GB</a>
-                            </h3>
-                            <span>$840.00</span>
-                        </div>
-                    </div>
-                    <!-- End Single List -->
-                    <!-- Start Single List -->
-                    <div class="single-list">
-                        <div class="list-image">
-                            <a href="product-grids.html"><img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScCQQ56rwpSNSzBw-QaPrC_csYmjhbv--MGg&s"
-                                    alt="#"></a>
-                        </div>
-                        <div class="list-info">
-                            <h3>
-                                <a href="product-grids.html">Zeus Bluetooth Headphones</a>
-                            </h3>
-                            <span>$28.00</span>
-                        </div>
-                    </div>
-                    <!-- End Single List -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Home Product List -->
+    
 
     <!-- Start Brands Area -->
     <div class="brands">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
-                    <h2 class="title">Popular Brands</h2>
+                    <h2 class="title">{{__('app.popular brands')}}</h2>
                 </div>
             </div>
             <div class="brands-logo-wrapper">
                 <div class="brands-logo-carousel d-flex align-items-center justify-content-between">
                     <div class="brand-logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
+                        <img src="https://cdn.al-ain.com/lg/archive/inline/images/1_24.png" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
+                        <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCuZ8-uxRId4VEqmcIk1RSMy92Hbgz6rOnlw&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
+                        <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ42AKY4_AD4gDQC8vc0DoAezyfUUQOqPv5aA&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaOsNoWXFs8ZweoyJESmfqjrlMVs4aBBYIyg&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
+                        <img src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoW9rG6jtmii3KOe8JxWuS4MXtNFGgAwMLdA&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Hl_N7p4ULJvPd_C5D1vs4TBu5s2dnZMkWw&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5fd7L8WeA4bwQB_2jTOvMqxurjspv4GjZ0w&s" alt="#">
                     </div>
                     <div class="brand-logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KA4btTh3P-pt89ee8P_-uTTe8evkB4sGvg&s" alt="#">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9-2f2OwT0G-ICjV8V9B2SFm72KZTTUM99kg&s" alt="#">
                     </div>
                 </div>
             </div>
@@ -451,7 +309,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>Our Latest News</h2>
+                        <h2>{{__('app.our latest news')}}</h2>
                         <p>There are many variations of passages of Lorem
                             Ipsum available, but the majority have suffered alteration in some form.</p>
                     </div>
@@ -463,7 +321,7 @@
                     <div class="single-blog">
                         <div class="blog-img">
                             <a href="blog-single-sidebar.html">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGsMz9g3T9PfjNeDzAEoCqWCfjp53afA-f8Q&s" alt="#">
+                                <img src="	https://cdn.salla.sa/EYYNv/yR16BpaGmlUdxlqyXOPmProSpHJ33jhh0Iu7WKYW.jpg" alt="#">
                             </a>
                         </div>
                         <div class="blog-content">
@@ -485,7 +343,7 @@
                     <div class="single-blog">
                         <div class="blog-img">
                             <a href="blog-single-sidebar.html">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGsMz9g3T9PfjNeDzAEoCqWCfjp53afA-f8Q&s" alt="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlfxcokUVCKgoRi-TzAkUlKxOJVw_mjFN2zw&s" alt="#">
                             </a>
                         </div>
                         <div class="blog-content">
@@ -507,7 +365,7 @@
                     <div class="single-blog">
                         <div class="blog-img">
                             <a href="blog-single-sidebar.html">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGsMz9g3T9PfjNeDzAEoCqWCfjp53afA-f8Q&s" alt="#">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG_eRKDRXHxRthkN3p5bUOYnM7l4canHBiqQ&s" alt="#">
                             </a>
                         </div>
                         <div class="blog-content">
