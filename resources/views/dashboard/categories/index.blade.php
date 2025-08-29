@@ -7,7 +7,9 @@
 @endsection
 @section('content')
     <div class="mb-5">
-        <a href="{{ route('dashboard.categories.create') }}" class="btn btn-sm btn-outline-primary mr-2">Create</a>
+        @if(Auth::user()->can('categories.create'))
+            <a href="{{ route('dashboard.categories.create') }}" class="btn btn-sm btn-outline-primary mr-2">Create</a>
+        @endif
         <a href="{{ route('dashboard.categories.trash') }}" class="btn btn-sm btn-outline-dark">Trash</a>
     </div>
     @if (session()->has('success'))
@@ -56,16 +58,18 @@
                 <td class="d-inline-flex gap-3 text-center">
                     <a href="{{ route('dashboard.categories.show',$category->id) }}" class="btn btn-sm btn-primary">
                         <i class="fa-solid fa-eye"></i></a>
+                    @can('categories.update')
+                        <a href="{{ route('dashboard.categories.edit',$category->id) }}" class="btn btn-sm btn-success">
+                            <i class="fa-solid fa-pen-to-square"></i></a>
+                    @endcan
 
-                    <a href="{{ route('dashboard.categories.edit',$category->id) }}" class="btn btn-sm btn-success">
-                        <i class="fa-solid fa-pen-to-square"></i></a>
-
-                    
-                    <form action="{{ route('dashboard.categories.destroy',$category->id) }}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
-                    </form>
+                    @can('categories.delete')
+                        <form action="{{ route('dashboard.categories.destroy',$category->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        </form>
+                    @endcan
                 </td>
             </tr>
             @empty

@@ -4,10 +4,14 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
+                        @can('categories.view')
+                            
                        <a class="nav-link" href="{{ route('dashboard.categories.index') }}">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-layer-group"></i></div>
                             Categories
                         </a>
+                        @endcan
+
                        <a class="nav-link" href="{{ route('dashboard.products.index') }}">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-business-time"></i></div>
                             Products

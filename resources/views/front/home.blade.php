@@ -156,7 +156,7 @@
                             <li><a href="product-grids.html">Headphones</a></li>
                             <li><a href="product-grids.html">View All</a></li>
                         </ul>
-                        <div class="images">
+                        <div class="images" style="height: 80px;">
                             <img src="	https://m.media-amazon.com/images/I/618omOFl16L.jpg" alt="#">
                         </div>
                     </div>
