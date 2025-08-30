@@ -34,7 +34,7 @@ class AuthServiceProvider extends ServiceProvider
             return true;
         });
         Gate::define('categories.delete',function(){
-            return false;
+            return true;
         });
     }
 }

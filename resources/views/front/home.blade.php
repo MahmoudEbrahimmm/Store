@@ -65,7 +65,7 @@
     <!-- End Hero Area -->
 
     <!-- Start Featured Categories Area -->
-    <section class="featured-categories section">
+    <section class="featured-categories section" id="feature">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -185,7 +185,7 @@
     <!-- End Features Area -->
 
     <!-- Start Trending Product Area -->
-    <section class="trending-product section">
+    <section class="trending-product section" id="trending">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -236,7 +236,7 @@
     <!-- End Banner Area -->
 
     <!-- Start Special Offer -->
-    <section class="special-offer section">
+    <section class="special-offer section" id="special">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -264,7 +264,7 @@
     
 
     <!-- Start Brands Area -->
-    <div class="brands">
+    <div class="brands" id="brands">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
@@ -304,7 +304,7 @@
     <!-- End Brands Area -->
 
     <!-- Start Blog Section Area -->
-    <section class="blog-section section">
+    <section class="blog-section section" id="our">
         <div class="container">
             <div class="row">
                 <div class="col-12">

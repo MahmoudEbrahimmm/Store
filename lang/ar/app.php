@@ -18,4 +18,5 @@ return [
     "our latest news"=>"احدث اخبارنا",
     "popular brands"=>"العلامات التجارية",
     "follow us"=>"تابعنا",
+    "dashboard"=>"لوحة التحكم",
 ];

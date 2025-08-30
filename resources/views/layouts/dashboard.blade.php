@@ -35,6 +35,9 @@
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('dashboard.products.index') }}">Products</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ route('dashboard.roles.index') }}">Roles</a>
+        </li>
         </ul>
 
         <!-- Navbar Search-->

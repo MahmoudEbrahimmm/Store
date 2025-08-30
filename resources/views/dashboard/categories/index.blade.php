@@ -22,6 +22,11 @@
         {{session('error')}}
         </div>
     @endif
+    @if (session()->has('info'))
+    <div class="alert bg-info text-white">
+        {{session('info')}}
+        </div>
+    @endif
     <form action="{{ URL::current() }}" method="get" class="d-flex justify-content-between mb-3">
         <input type="text" name="name" placeholder="Name" class="form-control mx-2" :value="request('name')">
         <select name="status" class="form-control mx-2">

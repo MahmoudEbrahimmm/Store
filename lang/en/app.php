@@ -19,4 +19,5 @@ return [
     "our latest news"=>"Our Latest News",
     "popular brands"=>"Popular Brands",
     "follow us"=>"Follow Us",
+    "dashboard"=>"Dashboard",
 ];
