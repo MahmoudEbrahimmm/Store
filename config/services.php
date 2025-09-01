@@ -30,8 +30,22 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+
     'currency_converter'=> [
         'api_Key'=> env('CURRENCY_CONVERTER_API_KEY'),
     ],
+
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('APP_URL') . 'auth.google.callback',
+    ],
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => env('APP_URL') . 'auth.facebook.callback',
+    ],
+
+
 
 ];

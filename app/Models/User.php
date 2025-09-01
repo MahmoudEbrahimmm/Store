@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Crypt;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -21,6 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'provider',
+        'provider_id',
+        'provider_token',
     ];
 
     /**
@@ -31,6 +35,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'provider_token',
     ];
 
     /**
@@ -47,4 +52,11 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class,'user_id','id')
         ->withDefault();
     }
+    public function setProviderTokenAttribute($value){
+        $this->attributes['provider_token'] = Crypt::encryptString($value);
+    }
+    public function getProviderTokenAttribute($value){
+        return Crypt::decryptString($value);
+    }
+
 }

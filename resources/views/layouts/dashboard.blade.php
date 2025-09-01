@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>@yield('title-url',' Dashboard - لوحة التحكم ')</title>
+    <title>@yield('title-url', ' Dashboard - لوحة التحكم ')</title>
 
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <link href="{{ asset('dashboard/css/styles.css') }}" rel="stylesheet" />
     @stack('styles')
 </head>
@@ -20,24 +20,35 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="{{route('home')}}">{{env('APP_NAME')}}</a>
+        <a class="navbar-brand ps-3" href="{{ route('home') }}">{{ env('APP_NAME') }}</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
         <!-- Nav-bar left -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="{{ route('dashboard.categories.index') }}">Categories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="{{ route('dashboard.products.index') }}">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="{{ route('dashboard.roles.index') }}">Roles</a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ route('dashboard.categories.index') }}">Categories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ route('dashboard.products.index') }}">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ route('dashboard.roles.index') }}">Roles</a>
+            </li>
+
+                @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <ul class="nav-item">
+                        <a class="nav-link text-white d-inline-block px-0" rel="alternate"
+                            hreflang="{{ $localeCode }}"
+                            href="{{LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                    </ul>
+                @endforeach
+
         </ul>
 
         <!-- Navbar Search-->
@@ -49,7 +60,7 @@
                         class="fas fa-search"></i></button>
             </div>
         </form>
-        
+
         <x-dashboard.notification-menu />
 
         <!-- Navbar right-->
@@ -65,7 +76,7 @@
                     </li>
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
-                    <button type="submit" class="btn btn-light dropdown-item">Logout</button>
+                        <button type="submit" class="btn btn-light dropdown-item">Logout</button>
                     </form>
                 </ul>
             </li>
@@ -76,7 +87,8 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <a href="{{ route('dashboard.profile.edit') }}" class="sb-sidenav-menu-heading nav-link mt-3"> {{ Auth::user()->name ?? '' }}</a>
+                        <a href="{{ route('dashboard.profile.edit') }}" class="sb-sidenav-menu-heading nav-link mt-3">
+                            {{ Auth::user()->name ?? '' }}</a>
                         <!-- Start partials code nav -- sidebarMenu -->
                         @include('layouts.partials.nav')
                     </div>
@@ -84,7 +96,7 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Developed by:</div>
-                    {{env('APP_DEVLOPER')}}
+                    {{ env('APP_DEVLOPER') }}
                 </div>
             </nav>
         </div>
@@ -96,14 +108,14 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             @section('breadcrumb')
-                            <li class="breadcrumb-item"><a href="#" class="nav-link active">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="nav-link active">Home</a></li>
                             @show
                         </ol>
                     </div>
-                    
+
                     {{-- Start Section Content --}}
 
-                        @yield('content')
+                    @yield('content')
 
                     {{-- E--nd Section Content --}}
 
@@ -132,7 +144,7 @@
         crossorigin="anonymous"></script>
     <script src="{{ asset('dashboard/js/datatables-simple-demo.js') }}"></script>
     <script>
-        const userID = "{{Auth::id()}}";
+        const userID = "{{ Auth::id() }}";
     </script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>
     @stack('scripts')

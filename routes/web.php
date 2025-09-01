@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\SocialiteLoginController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
@@ -30,6 +31,11 @@ Route::post('currency',[CurrencyConverterController::class,'store'])
 ->name('currency.store');
 
 });
+
+Route::get('auth/{provider}/redirect', [SocialiteLoginController::class,'redirect'])
+->name('auth.socilaite.redirect');
+Route::get('auth/{provider}/callback', [SocialiteLoginController::class,'callback'])
+->name('auth.socilaite.callback');
 
 // require __DIR__.'/auth.php';
 require __DIR__.'/dashboard.php';
