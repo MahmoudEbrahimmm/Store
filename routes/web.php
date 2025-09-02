@@ -6,6 +6,7 @@ use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\CurrencyConverterController;
 use App\Http\Controllers\Front\HomeConreoller;
+use App\Http\Controllers\Front\OrdersController;
 use App\Http\Controllers\Front\PaymentsController;
 use App\Http\Controllers\Front\ProductsController;
 use App\Http\Controllers\ProfileController;
@@ -44,6 +45,9 @@ Route::post('orders/{order}/stripe/payment-intent',[PaymentsController::class,'c
     ->name('stripe.paymentIntent.create');
 Route::get('orders/{order}/pay/stripe/callback',[PaymentsController::class,'confirm'])
     ->name('stripe.return');
+
+Route::get('orders/{order}',[OrdersController::class,'show'])
+    ->name('orders.show');
 
 
 // require __DIR__.'/auth.php';

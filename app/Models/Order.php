@@ -48,6 +48,10 @@ class Order extends Model
         ->where('type','=','shipping');
     }
 
+    public function delivery(){
+        return $this->hasOne(Delivery::class);
+    }
+
     public static function booted(){
         static::creating(function(Order $order){
             $order->number = Order::getNextOrderNumber();
