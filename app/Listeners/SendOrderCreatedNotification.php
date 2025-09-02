@@ -25,8 +25,7 @@ class SendOrderCreatedNotification
     public function handle(OrderCreated $event): void
     {
         $order = $event->order;
-
-        // تحميل relation 
+ 
         $order->load('billingAddress');
 
         $users = User::where('store_id', $order->store_id)->get();

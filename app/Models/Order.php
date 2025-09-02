@@ -29,22 +29,31 @@ class Order extends Model
             'product_name','price','quantity','options'
         ]);
     }
+
+    public function items(){
+        return $this->hasMany(OrderItem::class, 'order_id');
+    }
+
     public function addresses(){
         return $this->hasMany(OrderAddress::class);
     }
+
     public function billingAddress(){
         return $this->hasOne(OrderAddress::class,'order_id','id')
         ->where('type','=','billing');
     }
+
     public function shippingAddress(){
         return $this->hasOne(OrderAddress::class,'order_id','id')
         ->where('type','=','shipping');
     }
+
     public static function booted(){
         static::creating(function(Order $order){
             $order->number = Order::getNextOrderNumber();
         });
     }
+
     public static function getNextOrderNumber(){
         $year = Carbon::now()->year;
         $number = Order::whereYear('created_at',$year)->max('number');
