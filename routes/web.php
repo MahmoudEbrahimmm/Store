@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\SocialiteLoginController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
+use App\Http\Controllers\Front\ContactsController;
 use App\Http\Controllers\Front\CurrencyConverterController;
 use App\Http\Controllers\Front\HomeConreoller;
 use App\Http\Controllers\Front\OrdersController;
@@ -19,6 +20,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 Route::get('mahmoud',function(){
     return view('mahmoud');
 });
+
+Route::get('contact',[ContactsController::class,'index'])
+    ->name('contact');
 
 Route::get('/',[HomeConreoller::class,'index'])->name('home');
 

@@ -72,10 +72,7 @@
                                     <h5 class="product-name">Product not found</h5>
                                 @endif
 
-                                <p class="product-des">
-                                    <span><em>Type:</em> Mirrorless</span>
-                                    <span><em>Color:</em> Black</span>
-                                </p>
+                                
                             </div>
                             <div class="col-lg-2 col-md-2 col-12">
                                 <div class="count-input">
@@ -109,7 +106,7 @@
                     <!-- Total Amount -->
                     <div class="total-amount">
                         <div class="row">
-                            <div class="col-lg-8 col-md-6 col-12">
+                            {{-- <div class="col-lg-8 col-md-6 col-12">
                                 <div class="left">
                                     <div class="coupon">
                                         <form action="#" target="_blank">
@@ -120,14 +117,12 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="right">
                                     <ul>
                                         <li>Cart Subtotal<span>{{ Currency::format($cart->total()) }}</span></li>
-                                        <li>Shipping<span>Free</span></li>
-                                        <li>You Save<span>$29.00</span></li>
-                                        <li class="last">You Pay<span>$2531.00</span></li>
+                                        
                                     </ul>
                                     <div class="button">
                                         <a href="{{route('checkout')}}" class="btn">Checkout</a>

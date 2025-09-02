@@ -58,8 +58,8 @@
                         <div class="top-middle">
                             <ul class="useful-links">
                                 <li><a href="{{ route('home') }}">{{ __('app.home') }}</a></li>
-                                <li><a href="about-us.html">{{ __('app.about us') }}</a></li>
-                                <li><a href="contact.html">{{ __('app.contact us') }}</a></li>
+                                <li><a href="">{{ __('app.about us') }}</a></li>
+                                <li><a href="{{route('contact')}}">{{ __('app.contact us') }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -120,18 +120,7 @@
                         <div class="main-menu-search">
                             <!-- navbar search start -->
                             <div class="navbar-search search-style-5">
-                                {{-- <div class="search-select">
-                                    <div class="select-position">
-                                        <select id="select1">
-                                            <option selected>{{ __('app.all') }}</option>
-                                            <option value="1">option 01</option>
-                                            <option value="2">option 02</option>
-                                            <option value="3">option 03</option>
-                                            <option value="4">option 04</option>
-                                            <option value="5">option 05</option>
-                                        </select>
-                                    </div>
-                                </div> --}}
+                                
                                 <div class="search-input">
                                     <input type="text" placeholder="Search">
                                 </div>
@@ -206,35 +195,15 @@
                                             aria-controls="navbarSupportedContent" aria-expanded="false"
                                             aria-label="Toggle navigation">{{ __('app.pages') }}</a>
                                         <ul class="sub-menu collapse" id="submenu-1-2">
+                                            <li class="nav-item"><a href="{{ route('cart.index') }}">Cart</a></li>
+                                            <li class="nav-item"><a href="{{ route('checkout') }}">Checkout</a></li>
                                             <li class="nav-item"><a href="{{ route('login') }}">Login</a></li>
                                             <li class="nav-item"><a href="{{ route('register') }}">Register</a></li>
                                         </ul>
                                     </li>
-                                    {{-- shop  --}}
+                                    
                                     <li class="nav-item">
-                                        <a class="dd-menu collapsed" href="javascript:void(0)"
-                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-3"
-                                            aria-controls="navbarSupportedContent" aria-expanded="false"
-                                            aria-label="Toggle navigation">Shop</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-3">
-                                            <li class="nav-item"><a href="{{ route('cart.index') }}">Cart</a></li>
-
-                                            <li class="nav-item"><a href="{{ route('checkout') }}">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    {{-- //blog --}}
-                                    {{-- <li class="nav-item">
-                                        <a class="dd-menu collapsed" href="javascript:void(0)"
-                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-4"
-                                            aria-controls="navbarSupportedContent" aria-expanded="false"
-                                            aria-label="Toggle navigation">Blog</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-4">
-
-                                        </ul>
-                                    </li> --}}
-
-                                    <li class="nav-item">
-                                        <a href="contact.html"
+                                        <a href="{{route('contact')}}"
                                             aria-label="Toggle navigation">{{ __('app.contact us') }}</a>
                                     </li>
                                 </ul>

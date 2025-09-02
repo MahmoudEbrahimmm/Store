@@ -6,6 +6,9 @@ use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\RolesController;
 use App\Http\Middleware\CheckUserType;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
+Route::group(['prefix' => LaravelLocalization::setLocale()], function(){
 
 Route::get('/dashboard/index', [DashboardController::class,'index'])
 ->middleware('auth','verified','auth.type:super-admin,admin')
@@ -26,8 +29,12 @@ Route::group([
 
     Route::resource('dashboard/products',ProductsContrller::class);
 
+
     // Route::get('roles/trash', [RolesController::class,'trash'])->name('roles.trash');
     // Route::put('roles/{role}/restore', [RolesController::class,'restore'])->name('role.restore');
     // Route::delete('roles/{role}/force-delete', [RolesController::class,'force-delete'])->name('roles.force-delete');
     Route::resource('dashboard/roles',RolesController::class);
+});
+
+
 });
