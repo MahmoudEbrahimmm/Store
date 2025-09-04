@@ -14,7 +14,7 @@ return [
     "pages"=>"الصفحات",
     "featured categories"=>"الفئات المميزة",
     "trending product"=>"المنتج الرائج",
-    "special offer"=>"عرض خاص",
+    "special offer"=>"المنتجات",
     "our latest news"=>"احدث اخبارنا",
     "popular brands"=>"العلامات التجارية",
     "follow us"=>"تابعنا",

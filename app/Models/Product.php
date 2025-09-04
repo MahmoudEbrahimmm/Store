@@ -67,6 +67,16 @@ class Product extends Model
     {
         $builder->where('status','=','active');
     }
+    public function scopeLatestActive($query, $limit = null)
+    {
+        $query->with('category')->active()->latest();
+        if ($limit) {
+            $query->limit($limit);
+        }
+        return $query;
+    }
+
+
 
     
     public function getImageUrlAttribute()

@@ -15,7 +15,7 @@ return [
     "pages"=>"Pages",
     "featured categories"=>"Featured Categories",
     "trending product"=>"Trending Product",
-    "special offer"=>"Special Offer",
+    "special offer"=>"Products",
     "our latest news"=>"Our Latest News",
     "popular brands"=>"Popular Brands",
     "follow us"=>"Follow Us",

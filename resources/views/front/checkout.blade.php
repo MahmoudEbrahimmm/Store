@@ -109,7 +109,8 @@
                                                 <div class="single-form form-default">
                                                     <label>Country</label>
                                                     <div class="form-input form">
-                                                        <select name="addr[billing][country]" placeholder="Country" class="form-control">
+                                                        <select name="addr[billing][country]" placeholder="Country"
+                                                            class="form-control">
                                                             @foreach ($countries as $code => $name)
                                                                 <option value="{{ $code }}">{{ $name }}
                                                                 </option>
@@ -217,7 +218,8 @@
                                                 <div class="single-form form-default">
                                                     <label>Country</label>
                                                     <div class="form-input form">
-                                                        <select name="addr[billing][country]" placeholder="Country"  class="form-control">
+                                                        <select name="addr[billing][country]" placeholder="Country"
+                                                            class="form-control">
                                                             @foreach ($countries as $code => $name)
                                                                 <option value="{{ $code }}">{{ $name }}
                                                                 </option>
@@ -226,138 +228,44 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
-                                                <div class="checkout-payment-option">
-                                                    <h6 class="heading-6 font-weight-400 payment-title">Select Delivery
-                                                        Option</h6>
-                                                    <div class="payment-option-wrapper">
-                                                        <div class="single-payment-option">
-                                                            <input type="radio" name="shipping" checked
-                                                                id="shipping-1">
-                                                            <label for="shipping-1">
-                                                                <img src="https://via.placeholder.com/60x32"
-                                                                    alt="Sipping">
-                                                                <p>Standerd Shipping</p>
-                                                                <span class="price">$10.50</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="single-payment-option">
-                                                            <input type="radio" name="shipping" id="shipping-2">
-                                                            <label for="shipping-2">
-                                                                <img src="https://via.placeholder.com/60x32"
-                                                                    alt="Sipping">
-                                                                <p>Standerd Shipping</p>
-                                                                <span class="price">$10.50</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="single-payment-option">
-                                                            <input type="radio" name="shipping" id="shipping-3">
-                                                            <label for="shipping-3">
-                                                                <img src="https://via.placeholder.com/60x32"
-                                                                    alt="Sipping">
-                                                                <p>Standerd Shipping</p>
-                                                                <span class="price">$10.50</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="single-payment-option">
-                                                            <input type="radio" name="shipping" id="shipping-4">
-                                                            <label for="shipping-4">
-                                                                <img src="https://via.placeholder.com/60x32"
-                                                                    alt="Sipping">
-                                                                <p>Standerd Shipping</p>
-                                                                <span class="price">$10.50</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="steps-form-btn button">
-                                                    <button class="btn" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                                        aria-controls="collapseThree">previous</button>
-                                                    <a href="javascript:void(0)" class="btn btn-alt">Save &
-                                                        Continue</a>
-                                                </div>
-                                            </div>
                                         </div>
                                     </section>
                                 </li>
                                 <li>
-                                    <h6 class="title collapsed" data-bs-toggle="collapse"
-                                        data-bs-target="#collapsefive" aria-expanded="false"
-                                        aria-controls="collapsefive">Payment Info</h6>
-                                    <section class="checkout-steps-form-content collapse" id="collapsefive"
-                                        aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="checkout-payment-form">
-                                                    
-    
-                                                    <div class="single-form form-default button">
-                                                        <button type="submit" class="btn">pay now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                </li>
+
                             </ul>
                         </div>
                 </div>
-                </form>
-                {{-- // end form checkout  --}}
                 <div class="col-lg-4">
                     <div class="checkout-sidebar">
-                        <div class="checkout-sidebar-coupon">
-                            <p>Appy Coupon to get discount!</p>
-                            <form action="#">
-                                <div class="single-form form-default">
-                                    <div class="form-input form">
-                                        <input type="text" placeholder="Coupon Code">
-                                    </div>
-                                    <div class="button">
-                                        <button class="btn">apply</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+
                         <div class="checkout-sidebar-price-table mt-30">
+
+
                             <h5 class="title">Pricing Table</h5>
 
                             <div class="sub-total-price">
                                 <div class="total-price">
                                     <p class="value">Subotal Price:</p>
-                                    <p class="price">{{Currency::format($cart->total()) }}</p>
+                                    <p class="price">{{ Currency::format($cart->total()) }}</p>
                                 </div>
-                                <div class="total-price shipping">
-                                    <p class="value">Subotal Price:</p>
-                                    <p class="price">$10.50</p>
-                                </div>
-                                <div class="total-price discount">
-                                    <p class="value">Subotal Price:</p>
-                                    <p class="price">$10.00</p>
-                                </div>
+
                             </div>
 
-                            <div class="total-payable">
-                                <div class="payable-price">
-                                    <p class="value">Subotal Price:</p>
-                                    <p class="price">{{Currency::format($cart->total()) }}</p>
+                            <div class="col-md-12 mt-3">
+                                <div class="steps-form-btn button">
+                                    <button class="btn w-100" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                        aria-expanded="false" aria-controls="collapseThree">previous</button>
+
                                 </div>
                             </div>
-                            <div class="price-table-btn button">
-                                <a href="javascript:void(0)" class="btn btn-alt">Checkout</a>
-                            </div>
-                            
                         </div>
-                        <div class="checkout-sidebar-banner mt-30">
-                            <a href="product-grids.html">
-                                <img src="{{ asset('assets/images/defalt product.jpeg') }}" alt="#">
-                            </a>
-                        </div>
+
                     </div>
                 </div>
+                </form>
+                {{-- // end form checkout  --}}
+
             </div>
         </div>
     </section>

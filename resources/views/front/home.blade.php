@@ -1,5 +1,15 @@
 <x-front-layout>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 m-auto">
+                @if (session()->has('success'))
+                    <div class="alert bg-info text-white mt-5">
+                        {{ session('success') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
     <!-- Start Hero Area -->
     <section class="hero-area">
         <div class="container">
@@ -19,7 +29,7 @@
                                         labore dolore magna aliqua.</p>
                                     <h3><span>Now Only</span> $320.99</h3>
                                     <div class="button">
-                                        <a href="product-grids.html" class="btn">Shop Now</a>
+                                        <a href="#" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -34,20 +44,20 @@
                             <!-- Start Small Banner -->
                             @foreach ($section as $product)
                                 <div class="hero-small-banner"
-                                style="background-image: url('{{ asset('storage/' . $product->image) }}');">
-                                <div class="content text-white">
-                                    <h2>
-                                        <span class="text-white">{{$product->name}}</span>
-                                        
-                                    </h2>
-                                    <h3 class="text-white">$ {{$product->price}}</h3>
+                                    style="background-image: url('{{ asset('storage/' . $product->image) }}');">
+                                    <div class="content text-white">
+                                        <h2>
+                                            <span class="text-white">{{ $product->name }}</span>
+
+                                        </h2>
+                                        <h3 class="text-white">$ {{ $product->price }}</h3>
+                                    </div>
                                 </div>
-                            </div>
                             @endforeach
                             <!-- End Small Banner -->
                         </div>
 
-                        
+
                     </div>
                 </div>
             </div>
@@ -68,18 +78,19 @@
                 </div>
             </div>
             <div class="row">
-                
-                    <!-- Start Single Category -->
 
-                    @foreach ($products_featured as $product)
+                <!-- Start Single Category -->
+
+                @foreach ($products_featured as $product)
                     <div class="col-lg-3 col-md-6 col-12">
                         <x-featured-categories :product="$product" />
                     </div>
-                    @endforeach
+                @endforeach
 
-                    <!-- End Single Category -->
-                
-                
+
+                <!-- End Single Category -->
+
+
             </div>
         </div>
     </section>
